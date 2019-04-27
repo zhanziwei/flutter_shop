@@ -21,15 +21,15 @@ class _IndexPageState extends State<IndexPage> {
       title: Text('首页')
     ),
     BottomNavigationBarItem(
-        icon: Icon(CupertinoIcons.home),
+        icon: Icon(CupertinoIcons.search),
         title: Text('分类')
     ),
     BottomNavigationBarItem(
-        icon: Icon(CupertinoIcons.home),
+        icon: Icon(CupertinoIcons.shopping_cart),
         title: Text('购物车')
     ),
     BottomNavigationBarItem(
-        icon: Icon(CupertinoIcons.home),
+        icon: Icon(CupertinoIcons.profile_circled),
         title: Text('会员中心')
     ),
   ];
