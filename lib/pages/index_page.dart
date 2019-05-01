@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'member_page.dart';
 import 'home_page.dart';
 import 'cart_page.dart';
 import 'category_page.dart';
-
 
 class IndexPage extends StatefulWidget {
   @override
@@ -17,19 +15,19 @@ class _IndexPageState extends State<IndexPage> {
 
   final List<BottomNavigationBarItem> _bottomTabs = [
     BottomNavigationBarItem(
-      icon: Icon(CupertinoIcons.home),
+      icon: Icon(Icons.home),
       title: Text('首页')
     ),
     BottomNavigationBarItem(
-        icon: Icon(CupertinoIcons.search),
+        icon: Icon(Icons.search),
         title: Text('分类')
     ),
     BottomNavigationBarItem(
-        icon: Icon(CupertinoIcons.shopping_cart),
+        icon: Icon(Icons.shopping_cart),
         title: Text('购物车')
     ),
     BottomNavigationBarItem(
-        icon: Icon(CupertinoIcons.profile_circled),
+        icon: Icon(Icons.account_circle),
         title: Text('会员中心')
     ),
   ];
