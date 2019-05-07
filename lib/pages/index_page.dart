@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'home_page.dart';
 import 'category_page.dart';
@@ -12,8 +13,9 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
+
   int _currentIndex = 0;
-  var _currentPage;
+//  var _currentPage;
   final List<Widget> tabPages = [
     HomePage(),
     CategoryPage(),
@@ -33,17 +35,17 @@ class _IndexPageState extends State<IndexPage> {
   @override
   void initState() {
     // TODO: implement initState
-    _currentPage = tabPages[_currentIndex];
+//    _currentPage = tabPages[_currentIndex];
     print('initState');
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)
+      ..init(context);
+    ;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('百姓生活+'),
-      ),
       backgroundColor: Colors.blueAccent,
       bottomNavigationBar: BottomNavigationBar(
         items: _bottomTabs,
@@ -52,12 +54,15 @@ class _IndexPageState extends State<IndexPage> {
         onTap: (index) {
           setState(() {
             _currentIndex = index;
-            _currentPage = tabPages[index];
+//            _currentPage = tabPages[index];
             print('setState');
           });
         },
       ),
-      body: _currentPage,
+      body: IndexedStack(
+        index: _currentIndex,
+        children: tabPages,
+      ),
     );
   }
 }
