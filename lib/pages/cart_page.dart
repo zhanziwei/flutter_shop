@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+//import 'package:provide/provide.dart';
 
-class CartPage extends StatefulWidget {
-  @override
-  _CartPageState createState() => _CartPageState();
-}
-
-class _CartPageState extends State<CartPage> {
+class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('nihao'),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            Text('你好'),
+
+          ],
+        ),
+      ),
     );
   }
 }

@@ -19,8 +19,8 @@ class _IndexPageState extends State<IndexPage> {
   final List<Widget> tabPages = [
     HomePage(),
     CategoryPage(),
+    CartPage(),
     MemberPage(),
-    CartPage()
   ];
   final List<BottomNavigationBarItem> _bottomTabs = [
     BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), title: Text('首页')),
@@ -36,7 +36,6 @@ class _IndexPageState extends State<IndexPage> {
   void initState() {
     // TODO: implement initState
 //    _currentPage = tabPages[_currentIndex];
-    print('initState');
     super.initState();
   }
 
@@ -44,7 +43,7 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)
       ..init(context);
-    ;
+
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       bottomNavigationBar: BottomNavigationBar(
@@ -55,10 +54,10 @@ class _IndexPageState extends State<IndexPage> {
           setState(() {
             _currentIndex = index;
 //            _currentPage = tabPages[index];
-            print('setState');
           });
         },
       ),
+
       body: IndexedStack(
         index: _currentIndex,
         children: tabPages,
