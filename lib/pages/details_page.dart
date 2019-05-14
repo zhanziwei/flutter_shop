@@ -5,14 +5,14 @@ import 'package:provide/provide.dart';
 import 'package:flutter_shop/pages/details_pages/details_top_area.dart';
 import 'package:flutter_shop/pages/details_pages/details_explain.dart';
 import 'package:flutter_shop/pages/details_pages/details_tabBar.dart';
-
+import 'package:flutter_shop/pages/details_pages/details_bottom.dart';
 class DetailsPage extends StatelessWidget {
 
   final String goodsId;
   DetailsPage(this.goodsId);
+
   @override
   Widget build(BuildContext context) {
-    _getBackInfo(context);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: () {
@@ -40,7 +40,11 @@ class DetailsPage extends StatelessWidget {
               Positioned(
                 bottom: 0,
                 left: 0,
-                child: Text('测试'),
+                child: Row(
+                  children: <Widget>[
+                    DetailsBottom()
+                  ],
+                ),
               )
             ],
           );
